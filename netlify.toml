@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build --modern"
+  publish = "dist/"
+
+[[redirects]]
+  from = "https://macarie.netlify.com/*"
+  to = "https://macarie.me/:splat"
+  status = 301
+  force = true
