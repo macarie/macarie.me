@@ -1,0 +1,195 @@
+@import 'sass/generic.sass'
+@import 'sass/helpers.sass'
+
+
+// @yellow: Active links
+// @black: Headings and links
+// @darkGrey: Subheading
+// @grey: Text in second level @white elements
+// @lightGrey: Text in first level @white elements
+// @white: Text on elements with @black background
+$textColors: (yellow: #f7be32, black: #1e1d24, darkGrey: #6c6c6c, grey: #919395, lightGrey: #b8b8b8, white: #ffffff)
+// @yellow: Highlights & active elements
+// @black: Secondary active elements
+// @darkGrey: Elements on an element with @lightGrey background
+// @grey: Interactive elements
+// @lightGrey: Backgrounds
+// @white: Backgrounds
+$elementsColors: (yellow: #f7be32, black: #1e1d24, darkGrey: #bababa, grey: #dcdcdc, lightGrey: #f7f7f7, white: #ffffff)
+
+
+body
+  color: map-get($textColors, lightGrey)
+
+a
+  color: map-get($textColors, black)
+
+h1
+  color: map-get($textColors, black)
+
+h2
+  color: map-get($textColors, darkGrey)
+
+
+// NavBar.vue
+.navbar
+  text-align: center
+  padding-top: 1rem
+  margin-bottom: 5rem
+
+  &--logo-image
+    width: 5rem
+    height: 5rem
+
+
+// About.vue
+.about
+  height: calc(100vh - var(--top-offset))
+  margin-bottom: 8rem
+
+  &--container
+    margin-bottom: 5rem
+
+  &--heading, &--paragraph
+    width: 100%
+    max-width: 800px
+
+  &--heading
+    margin-bottom: 1rem
+    font-size: 3rem
+    font-weight: 700
+
+    img
+      height: 3rem
+      vertical-align: middle
+
+  &--arrow-link
+    cursor: pointer
+    margin-bottom: .5rem
+
+    .feather
+      pointer-events: none
+      width: 1.4rem
+      height: 1.4rem
+      stroke-width: 1.5
+      margin-bottom: 1.5rem
+      animation: moveDown .8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate, chevronColor .8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate
+
+@keyframes moveDown
+  from
+    transform: translateY(0)
+
+  to
+    transform: translateY(1.5rem)
+
+@keyframes chevronColor
+  to
+    color: map-get($elementsColors, yellow)
+
+
+// Projects.vue
+.projects
+  margin-bottom: 8rem
+
+  &--heading
+    font-size: 1.8rem
+    margin-bottom: 3rem
+
+  &--project
+    align-items: stretch
+    width: calc(100% - 250px)
+    padding: 1rem
+    background-color: map-get($elementsColors, white)
+    border-radius: .25rem
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .05)
+    margin-left: 0
+
+    &:not(:last-child)
+      margin-bottom: 3rem
+
+    &-text
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      padding-right: 1rem
+
+    &-heading
+      font-size: 1.2rem
+      margin-bottom: .5rem
+
+    &-subheading
+      font-size: .9rem
+      font-weight: 300
+      color: map-get($textColors, darkGrey)
+      position: relative
+      margin-left: .5rem
+      margin-bottom: 1.5rem
+
+      &::before
+        content: '—'
+        font-weight: 200
+        color: map-get($textColors, lightGrey)
+        margin-left: -.5rem
+
+
+    &-paragraph
+      font-size: .9rem
+      color: map-get($textColors, grey)
+      margin-bottom: 1rem
+
+    &-links, &-link
+      display: flex
+      flex-direction: row
+      flex-wrap: nowrap
+      justify-content: flex-start
+
+    &-links
+      margin-top: auto
+      align-items: stretch
+
+    &-link
+      align-items: center
+      padding: .4rem
+      color: map-get($elementsColors, darkGrey)
+      background-color: map-get($elementsColors, lightGrey)
+      border-radius: .25rem
+      margin-right: .4rem
+
+      svg
+        vertical-align: middle
+
+    &-cover
+      min-width: 500px
+      max-width: 500px
+      margin-right: calc(-250px - .5rem)
+      font-size: 0
+      box-shadow: 0 0 0 2px map-get($elementsColors, yellow), 0 3px 10px 2px change-color(map-get($elementsColors, yellow), $alpha: .1)
+      border-radius: .25rem
+
+      &-image
+        border-radius: .25rem
+
+
+// Balloon.vue
+.balloon  
+  &::before
+    margin-top: -.75rem
+    padding: .25rem .5rem
+    font-size: .9rem
+    font-weight: 200
+    color: map-get($textColors, white)
+    background: change-color(map-get($elementsColors, black), $alpha: .9)
+    border-radius: .25rem
+
+// SimpleFooter.vue
+.footer
+  font-size: .9rem
+  margin-bottom: 5rem
+
+  &--logo-image
+    width: 3rem
+    height: 3rem
+
+  &--social:not(:last-child)
+    margin-right: 2rem
