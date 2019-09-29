@@ -26,6 +26,7 @@
               :data-balloon="link.name"
               :title="link.name"
               class="projects--project-link"
+              target="_blank"
             ></a>
           </p>
         </div>

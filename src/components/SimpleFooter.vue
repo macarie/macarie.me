@@ -16,6 +16,7 @@
           :href="social.link"
           :class="`footer--social socials--${social.name}`"
           v-text="social.name"
+          target="_blank"
         >
         </a>
       </div>
