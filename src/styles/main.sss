@@ -1,0 +1,194 @@
+*
+  outline: none
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+
+:root
+  font-size: calc(16px + .3vw)
+  color: #4d4d4d
+
+body
+  background: #fff
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+
+  min-height: 100vh
+
+article
+  width: 100%
+  max-width: 46rem
+
+  padding: 0 3.5rem
+
+h1
+  font-family: 'Grad', 'Georgia', serif
+  font-weight: 700
+  font-size: 2.5rem
+  color: #000
+
+  margin-bottom: 2rem
+
+p
+  font-family: 'Inter', 'Verdana', sans-serif
+  font-weight: 300
+  font-size: 1rem
+  line-height: 1.7
+  letter-spacing: -.011rem
+
+  quotes: "“" "”"
+
+  &:not(:last-child)
+    margin-bottom: 1rem
+
+em
+  font-family: 'GoodDog New', 'Inter', 'Verdana', sans-serif
+  font-style: normal
+  font-weight: 400
+
+  color: #753bf9
+
+  @supports (background-clip: text)
+    background-image: linear-gradient(
+      to bottom,
+      #753bf9,
+      ease-in-out,
+      #9150f8
+    )
+    background-clip: text
+
+    color: transparent
+
+a
+  --color-link-clear: #9150f8
+  --color-link-dark: #753bf9
+
+  position: relative
+  display: inline-flex
+
+  padding: 0 .3rem
+
+  background-image: radial-gradient(circle at top left, var(--color-link-dark), var(--color-link-clear))
+  border-radius: .2rem
+
+  font-weight: 600
+  white-space: nowrap
+  color: #fff
+  text-shadow: 0rem .05rem .1rem rgba(0, 0, 0, .2)
+
+  &::after
+    content: ''
+    pointer-events: none
+
+    position: absolute
+    left: 0
+    bottom: 0
+
+    height: .4rem
+    width: 100%
+
+    background-image: radial-gradient(circle at top left, var(--color-link-dark), var(--color-link-clear))
+
+    transform: translatey(.05rem)
+    filter: blur(.3rem) opacity(.5)
+
+  &[href*="github.com"]
+    --color-link-clear: #4d4d4d
+    --color-link-dark: #1a1a1a
+
+  &[href*="unsplash.com"]
+    --color-link-clear: #333
+    --color-link-dark: #000
+
+  &[href*="mailto:"]
+    --color-link-clear: #d44638
+    --color-link-dark: #b23121
+
+  &[href*="facilitylive.com"]
+    --color-link-clear: #df0c36
+    --color-link-dark: #ba0c2f
+
+  &[href*="twitter.com"]
+    --color-link-clear: #1da1f2
+    --color-link-dark: #1a91da
+
+.emoji
+  display: inline-flex
+
+  width: 1.2rem
+  line-height: 1.2rem
+
+  color: transparent
+
+  background-size: contain
+  background-repeat: no-repeat
+  background-position-x: left
+
+  &.emoji-pizza
+    background-image: url('../images/emojis/pizza.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/pizza.webp')
+
+  &.emoji-italy
+    background-image: url('../images/emojis/italy.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/italy.webp')
+
+  &.emoji-camera
+    background-image: url('../images/emojis/camera.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/camera.webp')
+
+  &.emoji-keyboard
+    background-image: url('../images/emojis/keyboard.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/keyboard.webp')
+
+  &.emoji-double-thumbs-up
+    background-image: url('../images/emojis/double-thumbs-up.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/double-thumbs-up.webp')
+
+  &.emoji-rainbow-vomit
+    background-image: url('../images/emojis/rainbow-vomit.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/rainbow-vomit.webp')
+
+  &.emoji-face-laptop
+    background-image: url('../images/emojis/face-laptop.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/face-laptop.webp')
+
+  &.emoji-crab
+    background-image: url('../images/emojis/crab.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/crab.webp')
+
+  &.emoji-ball
+    background-image: url('../images/emojis/ball.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/ball.webp')
+
+  &.emoji-pinata
+    background-image: url('../images/emojis/pinata.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/pinata.webp')
+
+  &.emoji-luggage
+    background-image: url('../images/emojis/luggage.png')
+
+    .webpalpha &
+      background-image: url('../images/emojis/luggage.webp')

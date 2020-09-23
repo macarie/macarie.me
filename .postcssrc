@@ -1,0 +1,10 @@
+{
+  "parser": "sugarss",
+  "plugins": {
+    "precss": {},
+    "postcss-easing-gradients": {},
+    "cssnano": {
+      "preset": "default"
+    }
+  }
+}
